@@ -1,0 +1,44 @@
+{% extends 'base.html'%}{%block content%}
+<div>
+  <h1 class="display-4">JavaScript</h1>
+
+        <header class="bg-primary text-white text-center py-5">
+        <h1>Introdução ao JavaScript com Bootstrap</h1>
+    </header>
+    <div class="container mt-4">
+        <section>
+            <h2>O que é JavaScript?</h2>
+            <p>O JavaScript é uma linguagem de programação de alto nível frequentemente usada para adicionar interatividade e comportamento dinâmico às páginas web. Com JavaScript, você pode responder a eventos do usuário, validar formulários, criar animações e muito mais.</p>
+        </section>
+        <section>
+            <h2>Como o Bootstrap pode ser usado com JavaScript?</h2>
+            <p>O Bootstrap inclui componentes interativos e plugins JavaScript que facilitam a adição de recursos dinâmicos aos seus sites. Por exemplo, você pode usar modais, carrosséis e abas do Bootstrap para criar elementos interativos sem escrever código JavaScript personalizado.</p>
+        </section>
+        <section>
+            <h2>Exemplo de Uso do JavaScript com Bootstrap</h2>
+            <p>Aqui está um exemplo de um botão que aciona um modal Bootstrap usando JavaScript:</p>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#myModal">Abrir Modal</button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="myModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Modal Bootstrap</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Este é um exemplo de modal Bootstrap acionado por JavaScript.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Inclua o JavaScript do Bootstrap (opcional) -->
+</div>
+{%endblock%}

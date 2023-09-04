@@ -1,0 +1,90 @@
+{%load static%}
+{% comment %} {% load bootstrap4 %} {% endcomment %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<title> WEB AVANÇADO </title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+
+    <!-- CSS IMPORTADOS DAQUI -->
+    {% comment %} <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> {% endcomment %}
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400|Work+Sans:300,400,700" rel="stylesheet">
+    
+    {% comment %} {% bootstrap_css %} {% endcomment %}
+	</head>
+
+      <style>
+        /* Estilo para o footer */
+        footer {
+            background-color: #333; /* Cor de fundo do footer */
+            color: #fff; /* Cor do texto do footer */
+            padding: 20px; /* Espaçamento interno do footer */
+            text-align: center; /* Alinhamento do texto ao centro */
+        }
+
+        /* Estilo para links no footer */
+        footer a {
+            color: #fff; /* Cor dos links no footer */
+            text-decoration: none; /* Remover sublinhado padrão */
+        }
+
+        /* Estilo para links no hover */
+        footer a:hover {
+            text-decoration: underline; /* Adicionar sublinhado ao passar o mouse sobre os links */
+        }
+    </style>
+	<body>
+	       
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">BSI - IFNMG</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+            <ul class="navbar-nav ml-auto"> <!-- Use 'ml-auto' para alinhar à direita -->
+                <li class="nav-item active">
+                    <a class="nav-link" href="{%url 'index'%}">HOME <span class="sr-only">(página atual)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{%url 'w3c'%}">W3C</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Desenvolvimento Web
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{%url 'html'%}">HTML</a>
+                        <a class="dropdown-item" href="{%url 'css'%}">CSS</a>
+                        <a class="dropdown-item" href="{%url 'javascript'%}">Javascript</a>
+                   
+                    </div>
+                </li>
+                <!-- <li class="nav-item">
+                    <a class="nav-link" href="{%url 'contato'%}">Contato</a>
+                </li> -->
+            </ul>
+            <!-- <button type="button" class="btn btn-outline-dark">Baixar</button> -->
+        </div>
+    </nav>
+
+
+  {% block content %}
+  {% endblock %}
+    <footer>
+        <p>&copy; Jeferson Lopes</p>
+        <p>Contato: <a href="mailto:seuemail@example.com">jefersoncou18@gmail.com.com</a></p>
+    </footer>
+
+	<script src="{%static 'scripts/demojs.js'%}" ></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" ></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" ></script>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+  {% comment %} {% bootstrap_javascript jquery='full' %} {% endcomment %}
+	</body>
+</html>    
