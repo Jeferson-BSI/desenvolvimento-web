@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Alunos Cadastrados</title>
+    <!-- Adicione as referências aos estilos do Bootstrap e ao jQuery (se ainda não estiverem) -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Referência ao Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Referência ao jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Outras referências e estilos -->
+</head>
+<body>
+    <h1>Alunos Cadastrados</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Foto</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for aluno in alunos %}
+                <tr>
+                    <td><a href="#" data-toggle="modal" data-target="#modal{{ aluno.id }}">{{ aluno.nome }}</a></td>
+                    <td><img src="{{ aluno.foto_aluno.url }}" alt="{{ aluno.nome }}" class="img-thumbnail" style="max-width: 100px;"></td>
+                </tr>
+
+                <!-- Modal para exibir a foto do aluno -->
+                <div class="modal fade" id="modal{{ aluno.id }}" tabindex="-1" role="dialog" aria-labelledby="modalLabel{{ aluno.id }}">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="modalLabel{{ aluno.id }}">{{ aluno.nome }}</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <img src="{{ aluno.foto_aluno.url }}" alt="{{ aluno.nome }}" class="img-fluid">
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{% url 'cadastro_aluno' %}">Cadastrar um novo aluno</a>
+    <br>
+    <a href="{% url 'index' %}">Página Inicial</a>
+
+    <!-- Ative os recursos de modal do Bootstrap -->
+    <script>
+        $(document).ready(function () {
+            $('[data-toggle="modal"]').click(function () {
+                var target = $(this).data('target');
+                $(target).modal();
+            });
+        });
+    </script>
+</body>
+</html>
