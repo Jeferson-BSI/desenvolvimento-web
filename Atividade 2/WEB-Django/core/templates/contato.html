@@ -1,0 +1,50 @@
+﻿{% extends 'base.html'%}{%block content%}
+<div class="jumbotron">
+            <header>
+        <h1>Imagens Surpreendentes Aleatórias</h1>
+        <p>Desbloqueie uma experiência ainda mais rica e personalizada! Registre-se agora para acessar um conjunto exclusivo de funcionalidades que tornarão a sua jornada pelo nosso site verdadeiramente memorável. Ao se cadastrar, você terá a oportunidade de salvar suas imagens favoritas, criar coleções personalizadas, compartilhar suas descobertas com amigos e muito mais. Junte-se à nossa comunidade de entusiastas de imagens e explore o nosso universo visual de uma maneira única e envolvente. Registre-se hoje e amplie o seu horizonte de possibilidades!</p>
+    </header>
+    <div class="container mt-5">
+        <h1>Formulário de Contato</h1>
+
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="nomeCompleto">Nome Completo:</label>
+                <input type="text" class="form-control" id="nomeCompleto" name="nome_completo" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="mensagem">Mensagem:</label>
+                <textarea class="form-control" id="mensagem" name="mensagem" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+    </div>
+
+    </div>
+    <!-- Inclua o JavaScript do Bootstrap (opcional) -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- JavaScript para capturar o envio do formulário -->
+    <script>
+        document.getElementById("formulario-contato").addEventListener("submit", function (event) {
+            event.preventDefault(); // Impede o envio padrão do formulário
+            const nomeCompleto = document.getElementById("nomeCompleto").value;
+            const email = document.getElementById("email").value;
+            const mensagem = document.getElementById("mensagem").value;
+            const telephone = document.getElementById("telephone").value;
+
+            // Exibe os dados no terminal do PyCharm
+            console.log("Nome Completo: " + nomeCompleto);
+            console.log("Email: " + email);
+            console.log("Email: " + email);
+
+            console.log("Mensagem: " + mensagem);
+        });
+    </script>
+</div>
+{%endblock%}
